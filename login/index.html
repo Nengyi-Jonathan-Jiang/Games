@@ -4,26 +4,29 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,minimum-scale=1">
 		<title>Login</title>
-        <!-- the form awesome library is used to add icons to our form -->
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-        <!-- include the stylesheet file -->
-        <link href="/style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <link rel="stylesheet" type="text/css" href="/style.css">
 	</head>
 	<body>
 		<div class="login">
 			<h1>Login</h1>
+			<script>
+				if(window.location.hash=="#invalidlogin") alert("Make sure your username and password are correct!"), window.location.hash=""
+			</script>
 			<form action="/auth" method="post">
-				<label for="username">
-					<!-- font awesome icon -->
-					<i class="fas fa-user"></i>
-				</label>
+				<label for="username"><em class="fas fa-user"></em></label>
 				<input type="text" name="username" placeholder="Username" id="username" required>
-				<label for="password">
-					<i class="fas fa-lock"></i>
-				</label>
+				<label for="password"><em class="fas fa-lock"></em></label>
 				<input type="password" name="password" placeholder="Password" id="password" required>
 				<input type="submit" value="Login">
+				<input type="button" value="Sign Up" id="signup" onclick="">
 			</form>
+			<script>
+				// xhr.open("POST", url, true);
+				// xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+				// xhr.send(someStuff);
+				// fetch('/auth-signup', {method: 'POST',headers: {'Accept': 'application/json','Content-Type':'application/json'}, body: JSON.stringify({username:document.getElementById('username').value,password:document.getElementById('password').value})})
+			</script>
 		</div>
 	</body>
 </html>
