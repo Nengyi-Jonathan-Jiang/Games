@@ -4,10 +4,17 @@
         <title>
             Games Site
         </title>
-        <link rel="stylesheet" href="files/homepage/style.css" type="text/css">
+        <link rel="stylesheet" href="homepage/style.css" type="text/css">
     </head>
     <body>
+        <h1 id="username">Welcome, Generic User!</h1>
         Games
         <a href="game1">Game 1</a>
+        <script>
+            let hash = window.location.hash.substring(1).replaceAll("%7B","{").replaceAll("%7D","}").replaceAll("%22","\"");
+            window.location.hash = "";
+            let data = JSON.parse(hash);
+            document.getElementById("username").innerText = "Welcome, " + data.username;
+        </script>
     </body>
 </html>
