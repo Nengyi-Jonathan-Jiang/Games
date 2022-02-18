@@ -8,8 +8,6 @@ const socketio = require('socket.io');
 /** @type {socketio.Server} */
 const io = require('socket.io')(server);
 
-const SHA256 = require("crypto-js/sha256");
-
 server.listen(3000);
 
 app.use('/files', express.static(__dirname));

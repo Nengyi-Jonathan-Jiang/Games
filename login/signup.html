@@ -11,15 +11,14 @@
 		<div class="login">
 			<h1>Login</h1>
 			<script>
-				if(window.location.hash=="#invalidlogin") alert("Make sure your username and password are correct!"), window.location.hash=""
+				if(window.location.hash=="#invalidsignup") alert("Username already taken!"), window.location.hash=""
 			</script>
-			<form action="/auth" method="post">
+			<form action="/auth-signup" method="post">
 				<label for="username"><em class="fas fa-user"></em></label>
 				<input type="text" name="username" placeholder="Username" id="username" required>
 				<label for="password"><em class="fas fa-lock"></em></label>
 				<input type="password" name="password" placeholder="Password" id="password" required>
-				<input type="submit" value="Login">
-				<a href="/signup">Sign up</a>
+				<input type="submit" value="Sign up">
 			</form>
 		</div>
 	</body>
