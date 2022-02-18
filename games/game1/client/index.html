@@ -2,12 +2,22 @@
 <html>
     <head>
         <title> Chat app </title>
-        <link href="game1/style.css" rel="stylesheet" type="text/css">
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <link rel="stylesheet" type="text/css" href="game1/style.css">
         <script src="/socket.io/socket.io.js"></script>
     </head>
     <body>
         <div id="content">
-            <canvas id="canvas"></canvas>
+            <div id="messages"></div>
+            <div id="input">
+                <span id="message-input" contenteditable></span>
+                <button id="message-send">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <em class="fas fa-lock"></em>
+                </button>
+            </div>
         </div>
         <script src="game1/script.js"></script>
     </body>

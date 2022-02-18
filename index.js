@@ -12,14 +12,12 @@ const server = require('http').Server(app);
 /** @type {socketio.Server} */
 const io = require('socket.io')(server);
 
+app.use(session({secret: 'secret',resave: true,saveUninitialized: true}));
 
 // #region login stuff
 
-app.use(session({
-	secret: 'secret',
-	resave: true,
-	saveUninitialized: true
-}));
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.get('/login/style.css', function(req,res){res.sendFile(__dirname + '/login/style.css')});
@@ -96,6 +94,11 @@ app.get('/home', function(req, res) {
 		res.end()
 	}
 });
+
+app.get('/get-acc-info', function(req, res){
+	console.log(req, req.session);
+	res.send(JSON.stringify(req.session))
+})
 
 let GAMES = fs.readdirSync("./games");
 
